@@ -1,5 +1,6 @@
 import express from 'express';
 import userRoutes from './routes/userRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
 import { initDatabase } from './db/init.js';
 
 // Initialize Express app
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // Routes
 app.use('/users', userRoutes);
+app.use('/events', eventRoutes);
 
 // Root route
 app.get('/', (req, res) => {
